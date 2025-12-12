@@ -7,10 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "generate:data": "bun run src/scripts/generate-data.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "bun run src/db/seed.ts",
+    "db:check": "bun run src/scripts/check-db-connection.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "drizzle-orm": "^0.45.1",
     "next": "16.0.10",
+    "postgres": "^3.4.7",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
@@ -18,9 +28,11 @@
     "@biomejs/biome": "2.2.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.16.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "drizzle-kit": "^0.31.8",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
