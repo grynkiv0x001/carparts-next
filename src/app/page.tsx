@@ -1,6 +1,5 @@
 import { getProductsWithRelations } from "@/lib/db-queries";
-import CategoryPreview from "@/components/CategoryPreview";
-import ProductCard from "@/components/ProductCard";
+import { CategoryPreview, ProductCard } from "@/components";
 import Link from "next/link";
 
 export default async function Home() {

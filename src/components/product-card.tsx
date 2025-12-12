@@ -7,11 +7,11 @@ interface ProductCardProps {
   categoryName?: string;
 }
 
-export default function ProductCard({
+export const ProductCard = ({
   part,
   manufacturerName,
   categoryName,
-}: ProductCardProps) {
+}: ProductCardProps) => {
   const totalPrice = part.pricing.dealerPrice + part.pricing.transportationFee;
   const inStock = part.availability.inStock;
 
@@ -119,4 +119,3 @@ export default function ProductCard({
     </Link>
   );
 }
-

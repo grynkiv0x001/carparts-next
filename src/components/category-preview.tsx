@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { partCategories } from "@/fixtures";
 
-export default function CategoryPreview() {
+export const CategoryPreview = () => {
   // Get main categories (no parent)
   const mainCategories = partCategories.filter((cat) => !cat.parentId);
   // Get some popular subcategories
@@ -62,5 +62,4 @@ export default function CategoryPreview() {
       </div>
     </section>
   );
-}
-
+};

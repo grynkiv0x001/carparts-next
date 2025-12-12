@@ -1,4 +1,4 @@
-export { default as Header } from "./Header";
-export { default as CategoryPreview } from "./CategoryPreview";
-export { default as ProductCard } from "./ProductCard";
+export * from "./header";
+export * from "./category-preview";
+export * from "./product-card";
 

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Header() {
+export const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
@@ -72,4 +72,3 @@ export default function Header() {
     </header>
   );
 }
-
