@@ -1,4 +1,4 @@
-import { pgTable, text, jsonb } from 'drizzle-orm/pg-core';
+import { jsonb, pgTable, text } from 'drizzle-orm/pg-core';
 import { manufacturers } from './manufacturers';
 
 export const carModels = pgTable('car_models', {

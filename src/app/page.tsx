@@ -1,6 +1,6 @@
-import { getProductsWithRelations } from '@/lib/db-queries';
-import { CategoryPreview, ProductCard } from '@/components';
 import Link from 'next/link';
+import { CategoryPreview, ProductCard } from '@/components';
+import { getProductsWithRelations } from '@/lib/db-queries';
 
 export default async function Home() {
   // Fetch products from database

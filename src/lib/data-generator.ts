@@ -1,11 +1,11 @@
 import { faker } from '@faker-js/faker';
-import type { CarPart } from '@/types/car-parts';
 import {
-  warehouses,
-  manufacturers,
   carModels,
+  manufacturers,
   partCategories,
+  warehouses,
 } from '@/fixtures/base-data';
+import type { CarPart } from '@/types/car-parts';
 
 /**
  * Generates a random car part with realistic data

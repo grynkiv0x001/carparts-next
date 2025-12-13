@@ -71,9 +71,9 @@ export const ProductCard = ({
             Compatible Models:
           </p>
           <div className="flex flex-wrap gap-1">
-            {part.compatibleModels.slice(0, 3).map((model, idx) => (
+            {part.compatibleModels.slice(0, 3).map((model) => (
               <span
-                key={idx}
+                key={model.modelId}
                 className="rounded bg-gray-100 px-2 py-0.5 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400"
               >
                 {model.years[0]}-{model.years[model.years.length - 1]}

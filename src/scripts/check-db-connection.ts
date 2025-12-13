@@ -37,7 +37,9 @@ async function checkConnection() {
       );
     } else {
       console.log(`✅ Found ${tables.length} table(s):`);
-      tables.forEach((table) => console.log(`  - ${table}`));
+      tables.forEach((table) => {
+        console.log(`  - ${table}`);
+      });
     }
 
     process.exit(0);

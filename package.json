@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write",
+    "format": "biome format --write && biome check --write",
     "generate:data": "bun run src/scripts/generate-data.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

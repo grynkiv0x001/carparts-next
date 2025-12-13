@@ -7,24 +7,21 @@
  */
 
 import { db } from '@/db';
-
 import {
-  warehouses as warehousesTable,
-  manufacturers as manufacturersTable,
-  carModels as carModelsTable,
-  partCategories as partCategoriesTable,
-  carParts as carPartsTable,
-} from './schema';
-
-import {
-  warehouses,
-  manufacturers,
   carModels,
+  manufacturers,
   partCategories,
   sampleProducts,
+  warehouses,
 } from '@/fixtures';
-
 import { generateUniqueCarParts } from '@/lib/data-generator';
+import {
+  carModels as carModelsTable,
+  carParts as carPartsTable,
+  manufacturers as manufacturersTable,
+  partCategories as partCategoriesTable,
+  warehouses as warehousesTable,
+} from './schema';
 
 async function seed() {
   console.log('🌱 Starting database seed...\n');

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export const Header = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -13,7 +13,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-black/95 dark:supports-[backdrop-filter]:bg-black/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60 dark:bg-black/95 dark:supports-[backdrop-filter]:bg-black/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -39,6 +39,7 @@ export const Header = () => {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
+                <title>Search</title>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

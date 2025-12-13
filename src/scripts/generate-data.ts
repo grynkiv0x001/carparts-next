@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+
 /**
  * Script to generate car parts data and populate the database
  *
@@ -10,14 +11,14 @@
  *   bun run src/scripts/generate-data.ts 500    # Generate 500 parts
  */
 
-import { generateUniqueCarParts } from '@/lib/data-generator';
 import { sampleProducts } from '@/fixtures/sample-products';
+import { generateUniqueCarParts } from '@/lib/data-generator';
 import type { CarPart } from '@/types/car-parts';
 
 // Get count from command line arguments or use default
 const count = process.argv[2] ? parseInt(process.argv[2], 10) : 100;
 
-if (isNaN(count) || count < 0) {
+if (Number.isNaN(count) || count < 0) {
   console.error('Error: Count must be a positive number');
   process.exit(1);
 }
@@ -89,7 +90,7 @@ console.log(`Max price: $${maxPrice.toFixed(2)}`);
 
 // Export the data
 const outputPath = './src/fixtures/generated-parts.json';
-const fs = await import('fs/promises');
+const fs = await import('node:fs/promises');
 await fs.writeFile(outputPath, JSON.stringify(allParts, null, 2), 'utf-8');
 
 console.log(`\n✅ Data exported to: ${outputPath}`);

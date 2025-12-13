@@ -1,7 +1,6 @@
-import { pgTable, text, jsonb, timestamp } from 'drizzle-orm/pg-core';
-
-import { manufacturers } from './manufacturers';
+import { jsonb, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 import { partCategories } from './categories';
+import { manufacturers } from './manufacturers';
 
 export const carParts = pgTable('car_parts', {
   id: text('id').primaryKey(),

@@ -6,13 +6,13 @@
  */
 
 import {
-  warehouses,
-  manufacturers,
-  partCategories,
-  sampleProducts,
   generateCarPart,
   generateCarParts,
   generateUniqueCarParts,
+  manufacturers,
+  partCategories,
+  sampleProducts,
+  warehouses,
 } from '@/fixtures';
 
 // Example 1: Use pre-defined sample products

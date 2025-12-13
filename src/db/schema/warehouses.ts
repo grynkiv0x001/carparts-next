@@ -1,4 +1,4 @@
-import { pgTable, text, doublePrecision, jsonb } from 'drizzle-orm/pg-core';
+import { jsonb, pgTable, text } from 'drizzle-orm/pg-core';
 
 export const warehouses = pgTable('warehouses', {
   id: text('id').primaryKey(),

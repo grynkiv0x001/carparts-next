@@ -1,6 +1,6 @@
+import { desc, inArray } from 'drizzle-orm';
 import { db } from '@/db';
 import { carParts, manufacturers, partCategories } from '@/db/schema';
-import { inArray, desc } from 'drizzle-orm';
 
 export async function getProductsWithRelations(limit = 12) {
   const products = await db

@@ -1,8 +1,8 @@
 import type {
-  Warehouse,
   CarManufacturer,
   CarModel,
   PartCategory,
+  Warehouse,
 } from '@/types/car-parts';
 
 export const warehouses: Warehouse[] = [
