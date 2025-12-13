@@ -1,40 +1,43 @@
 #!/usr/bin/env bun
 /**
  * Seed script to populate the database with fixture data
- * 
+ *
  * Usage:
  *   bun run src/db/seed.ts
  */
 
-import { db } from "./index";
+import { db } from '@/db';
+
 import {
   warehouses as warehousesTable,
   manufacturers as manufacturersTable,
   carModels as carModelsTable,
   partCategories as partCategoriesTable,
   carParts as carPartsTable,
-} from "./schema";
+} from './schema';
+
 import {
   warehouses,
   manufacturers,
   carModels,
   partCategories,
   sampleProducts,
-} from "@/fixtures";
-import { generateUniqueCarParts } from "@/lib/data-generator";
+} from '@/fixtures';
+
+import { generateUniqueCarParts } from '@/lib/data-generator';
 
 async function seed() {
-  console.log("🌱 Starting database seed...\n");
+  console.log('🌱 Starting database seed...\n');
 
   try {
     // Clear existing data (in reverse order of dependencies)
-    console.log("Clearing existing data...");
+    console.log('Clearing existing data...');
     await db.delete(carPartsTable);
     await db.delete(carModelsTable);
     await db.delete(partCategoriesTable);
     await db.delete(manufacturersTable);
     await db.delete(warehousesTable);
-    console.log("✅ Cleared existing data\n");
+    console.log('✅ Cleared existing data\n');
 
     // Insert warehouses
     console.log(`Inserting ${warehouses.length} warehouses...`);
@@ -46,7 +49,7 @@ async function seed() {
         coordinates: w.coordinates,
       })),
     );
-    console.log("✅ Warehouses inserted\n");
+    console.log('✅ Warehouses inserted\n');
 
     // Insert manufacturers
     console.log(`Inserting ${manufacturers.length} manufacturers...`);
@@ -57,7 +60,7 @@ async function seed() {
         country: m.country,
       })),
     );
-    console.log("✅ Manufacturers inserted\n");
+    console.log('✅ Manufacturers inserted\n');
 
     // Insert car models
     console.log(`Inserting ${carModels.length} car models...`);
@@ -69,7 +72,7 @@ async function seed() {
         years: m.years,
       })),
     );
-    console.log("✅ Car models inserted\n");
+    console.log('✅ Car models inserted\n');
 
     // Insert part categories
     console.log(`Inserting ${partCategories.length} part categories...`);
@@ -80,7 +83,7 @@ async function seed() {
         parentId: c.parentId,
       })),
     );
-    console.log("✅ Part categories inserted\n");
+    console.log('✅ Part categories inserted\n');
 
     // Insert sample products
     console.log(`Inserting ${sampleProducts.length} sample products...`);
@@ -101,7 +104,7 @@ async function seed() {
         updatedAt: p.updatedAt,
       })),
     );
-    console.log("✅ Sample products inserted\n");
+    console.log('✅ Sample products inserted\n');
 
     // Optionally generate and insert additional parts
     const generateCount = process.env.SEED_COUNT
@@ -109,7 +112,9 @@ async function seed() {
       : 0;
 
     if (generateCount > 0) {
-      console.log(`Generating and inserting ${generateCount} additional parts...`);
+      console.log(
+        `Generating and inserting ${generateCount} additional parts...`,
+      );
       const generatedParts = generateUniqueCarParts(generateCount);
       await db.insert(carPartsTable).values(
         generatedParts.map((p) => ({
@@ -131,9 +136,9 @@ async function seed() {
       console.log(`✅ ${generateCount} additional parts inserted\n`);
     }
 
-    console.log("✨ Database seed completed successfully!");
+    console.log('✨ Database seed completed successfully!');
   } catch (error) {
-    console.error("❌ Error seeding database:", error);
+    console.error('❌ Error seeding database:', error);
     throw error;
   }
 }
@@ -141,11 +146,10 @@ async function seed() {
 // Run the seed function
 seed()
   .then(() => {
-    console.log("\n✅ Seed script finished");
+    console.log('\n✅ Seed script finished');
     process.exit(0);
   })
   .catch((error) => {
-    console.error("\n❌ Seed script failed:", error);
+    console.error('\n❌ Seed script failed:', error);
     process.exit(1);
   });
-

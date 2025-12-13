@@ -1,5 +1,5 @@
-import Link from "next/link";
-import type { CarPart } from "@/types/car-parts";
+import Link from 'next/link';
+import type { CarPart } from '@/types/car-parts';
 
 interface ProductCardProps {
   part: CarPart;
@@ -106,7 +106,7 @@ export const ProductCard = ({
               </div>
               <div className="text-xs">
                 Ships in {part.availability.estimatedDeliveryDays} day
-                {part.availability.estimatedDeliveryDays !== 1 ? "s" : ""}
+                {part.availability.estimatedDeliveryDays !== 1 ? 's' : ''}
               </div>
             </div>
           ) : (
@@ -118,4 +118,4 @@ export const ProductCard = ({
       </div>
     </Link>
   );
-}
+};

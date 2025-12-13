@@ -1,8 +1,7 @@
-import { pgTable, text } from "drizzle-orm/pg-core";
+import { pgTable, text } from 'drizzle-orm/pg-core';
 
-export const manufacturers = pgTable("manufacturers", {
-  id: text("id").primaryKey(),
-  name: text("name").notNull(),
-  country: text("country").notNull(),
+export const manufacturers = pgTable('manufacturers', {
+  id: text('id').primaryKey(),
+  name: text('name').notNull(),
+  country: text('country').notNull(),
 });
-

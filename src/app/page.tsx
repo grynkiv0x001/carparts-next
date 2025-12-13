@@ -1,6 +1,6 @@
-import { getProductsWithRelations } from "@/lib/db-queries";
-import { CategoryPreview, ProductCard } from "@/components";
-import Link from "next/link";
+import { getProductsWithRelations } from '@/lib/db-queries';
+import { CategoryPreview, ProductCard } from '@/components';
+import Link from 'next/link';
 
 export default async function Home() {
   // Fetch products from database
@@ -10,11 +10,11 @@ export default async function Home() {
   try {
     products = await getProductsWithRelations(12);
   } catch (err) {
-    console.error("Error fetching products:", err);
+    console.error('Error fetching products:', err);
     error =
       err instanceof Error
         ? err.message
-        : "Failed to load products. Make sure the database is set up.";
+        : 'Failed to load products. Make sure the database is set up.';
   }
 
   return (
@@ -67,9 +67,24 @@ export default async function Home() {
                 <p className="mb-2 font-medium">To fix this:</p>
                 <ol className="list-inside list-decimal space-y-1">
                   <li>Make sure PostgreSQL is running</li>
-                  <li>Create the database: <code className="rounded bg-red-100 px-1 dark:bg-red-900/30">createdb carparts</code></li>
-                  <li>Set up schema: <code className="rounded bg-red-100 px-1 dark:bg-red-900/30">bun run db:push</code></li>
-                  <li>Seed the database: <code className="rounded bg-red-100 px-1 dark:bg-red-900/30">bun run db:seed</code></li>
+                  <li>
+                    Create the database:{' '}
+                    <code className="rounded bg-red-100 px-1 dark:bg-red-900/30">
+                      createdb carparts
+                    </code>
+                  </li>
+                  <li>
+                    Set up schema:{' '}
+                    <code className="rounded bg-red-100 px-1 dark:bg-red-900/30">
+                      bun run db:push
+                    </code>
+                  </li>
+                  <li>
+                    Seed the database:{' '}
+                    <code className="rounded bg-red-100 px-1 dark:bg-red-900/30">
+                      bun run db:seed
+                    </code>
+                  </li>
                 </ol>
               </div>
             </div>
@@ -79,10 +94,10 @@ export default async function Home() {
                 No Products Found
               </h3>
               <p className="text-sm text-yellow-700 dark:text-yellow-300">
-                The database is empty. Run{" "}
+                The database is empty. Run{' '}
                 <code className="rounded bg-yellow-100 px-1 dark:bg-yellow-900/30">
                   bun run db:seed
-                </code>{" "}
+                </code>{' '}
                 to populate it with sample data.
               </p>
             </div>

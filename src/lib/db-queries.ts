@@ -1,6 +1,6 @@
-import { db } from "@/db";
-import { carParts, manufacturers, partCategories } from "@/db/schema";
-import { inArray, desc } from "drizzle-orm";
+import { db } from '@/db';
+import { carParts, manufacturers, partCategories } from '@/db/schema';
+import { inArray, desc } from 'drizzle-orm';
 
 export async function getProductsWithRelations(limit = 12) {
   const products = await db
@@ -10,9 +10,7 @@ export async function getProductsWithRelations(limit = 12) {
     .orderBy(desc(carParts.createdAt));
 
   // Get all unique IDs
-  const manufacturerIds = [
-    ...new Set(products.map((p) => p.manufacturerId)),
-  ];
+  const manufacturerIds = [...new Set(products.map((p) => p.manufacturerId))];
   const categoryIds = [...new Set(products.map((p) => p.categoryId))];
 
   // Fetch all manufacturers and categories
@@ -32,9 +30,7 @@ export async function getProductsWithRelations(limit = 12) {
   ]);
 
   // Create lookup maps
-  const manufacturerMap = new Map(
-    allManufacturers.map((m) => [m.id, m.name]),
-  );
+  const manufacturerMap = new Map(allManufacturers.map((m) => [m.id, m.name]));
   const categoryMap = new Map(allCategories.map((c) => [c.id, c.name]));
 
   // Enhance products with related data
@@ -44,4 +40,3 @@ export async function getProductsWithRelations(limit = 12) {
     categoryName: categoryMap.get(product.categoryId),
   }));
 }
-

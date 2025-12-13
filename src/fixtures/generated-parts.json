@@ -9,13 +9,7 @@
     "compatibleModels": [
       {
         "modelId": "model-001",
-        "years": [
-          2018,
-          2019,
-          2020,
-          2021,
-          2022
-        ]
+        "years": [2018, 2019, 2020, 2021, 2022]
       }
     ],
     "pricing": {
@@ -54,14 +48,7 @@
     "compatibleModels": [
       {
         "modelId": "model-006",
-        "years": [
-          2015,
-          2016,
-          2017,
-          2018,
-          2019,
-          2020
-        ]
+        "years": [2015, 2016, 2017, 2018, 2019, 2020]
       }
     ],
     "pricing": {
@@ -100,14 +87,7 @@
     "compatibleModels": [
       {
         "modelId": "model-010",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -146,13 +126,7 @@
     "compatibleModels": [
       {
         "modelId": "model-013",
-        "years": [
-          2016,
-          2017,
-          2018,
-          2019,
-          2020
-        ]
+        "years": [2016, 2017, 2018, 2019, 2020]
       }
     ],
     "pricing": {
@@ -185,13 +159,7 @@
     "compatibleModels": [
       {
         "modelId": "model-016",
-        "years": [
-          2018,
-          2019,
-          2020,
-          2021,
-          2022
-        ]
+        "years": [2018, 2019, 2020, 2021, 2022]
       }
     ],
     "pricing": {
@@ -230,14 +198,7 @@
     "compatibleModels": [
       {
         "modelId": "model-019",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -276,14 +237,7 @@
     "compatibleModels": [
       {
         "modelId": "model-021",
-        "years": [
-          2017,
-          2018,
-          2019,
-          2020,
-          2021,
-          2022
-        ]
+        "years": [2017, 2018, 2019, 2020, 2021, 2022]
       }
     ],
     "pricing": {
@@ -322,14 +276,7 @@
     "compatibleModels": [
       {
         "modelId": "model-023",
-        "years": [
-          2018,
-          2019,
-          2020,
-          2021,
-          2022,
-          2023
-        ]
+        "years": [2018, 2019, 2020, 2021, 2022, 2023]
       }
     ],
     "pricing": {
@@ -368,14 +315,7 @@
     "compatibleModels": [
       {
         "modelId": "model-025",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -408,14 +348,7 @@
     "compatibleModels": [
       {
         "modelId": "model-003",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -448,14 +381,7 @@
     "compatibleModels": [
       {
         "modelId": "model-007",
-        "years": [
-          2018,
-          2019,
-          2020,
-          2021,
-          2022,
-          2023
-        ]
+        "years": [2018, 2019, 2020, 2021, 2022, 2023]
       }
     ],
     "pricing": {
@@ -494,13 +420,7 @@
     "compatibleModels": [
       {
         "modelId": "model-011",
-        "years": [
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -539,14 +459,7 @@
     "compatibleModels": [
       {
         "modelId": "model-015",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -585,14 +498,7 @@
     "compatibleModels": [
       {
         "modelId": "model-017",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -631,14 +537,7 @@
     "compatibleModels": [
       {
         "modelId": "model-020",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -677,14 +576,7 @@
     "compatibleModels": [
       {
         "modelId": "model-022",
-        "years": [
-          2018,
-          2019,
-          2020,
-          2021,
-          2022,
-          2023
-        ]
+        "years": [2018, 2019, 2020, 2021, 2022, 2023]
       }
     ],
     "pricing": {
@@ -723,14 +615,7 @@
     "compatibleModels": [
       {
         "modelId": "model-024",
-        "years": [
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2019, 2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -769,13 +654,7 @@
     "compatibleModels": [
       {
         "modelId": "model-026",
-        "years": [
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -808,13 +687,7 @@
     "compatibleModels": [
       {
         "modelId": "model-004",
-        "years": [
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -853,13 +726,7 @@
     "compatibleModels": [
       {
         "modelId": "model-008",
-        "years": [
-          2020,
-          2021,
-          2022,
-          2023,
-          2024
-        ]
+        "years": [2020, 2021, 2022, 2023, 2024]
       }
     ],
     "pricing": {
@@ -898,9 +765,7 @@
     "compatibleModels": [
       {
         "modelId": "model-017",
-        "years": [
-          2023
-        ]
+        "years": [2023]
       }
     ],
     "pricing": {
@@ -939,19 +804,11 @@
     "compatibleModels": [
       {
         "modelId": "model-003",
-        "years": [
-          2018,
-          2016
-        ]
+        "years": [2018, 2016]
       },
       {
         "modelId": "model-020",
-        "years": [
-          2024,
-          2017,
-          2019,
-          2021
-        ]
+        "years": [2024, 2017, 2019, 2021]
       }
     ],
     "pricing": {
@@ -990,21 +847,11 @@
     "compatibleModels": [
       {
         "modelId": "model-020",
-        "years": [
-          2020,
-          2018,
-          2021,
-          2019,
-          2017
-        ]
+        "years": [2020, 2018, 2021, 2019, 2017]
       },
       {
         "modelId": "model-019",
-        "years": [
-          2023,
-          2020,
-          2017
-        ]
+        "years": [2023, 2020, 2017]
       }
     ],
     "pricing": {
@@ -1029,9 +876,7 @@
       },
       "material": "Plastic"
     },
-    "images": [
-      "https://picsum.photos/seed/nFlQtiWd/400/300"
-    ],
+    "images": ["https://picsum.photos/seed/nFlQtiWd/400/300"],
     "createdAt": "2025-05-17T11:35:32.278Z",
     "updatedAt": "2025-07-15T08:07:48.015Z"
   },
@@ -1045,12 +890,7 @@
     "compatibleModels": [
       {
         "modelId": "model-014",
-        "years": [
-          2023,
-          2018,
-          2022,
-          2024
-        ]
+        "years": [2023, 2018, 2022, 2024]
       }
     ],
     "pricing": {
@@ -1075,9 +915,7 @@
       },
       "material": "Aluminum"
     },
-    "images": [
-      "https://picsum.photos/seed/4pFAprc/400/300"
-    ],
+    "images": ["https://picsum.photos/seed/4pFAprc/400/300"],
     "createdAt": "2025-02-17T23:45:28.918Z",
     "updatedAt": "2025-05-19T11:27:22.838Z"
   },
@@ -1091,10 +929,7 @@
     "compatibleModels": [
       {
         "modelId": "model-025",
-        "years": [
-          2021,
-          2024
-        ]
+        "years": [2021, 2024]
       }
     ],
     "pricing": {
@@ -1119,9 +954,7 @@
       },
       "material": "Iridium"
     },
-    "images": [
-      "https://picsum.photos/seed/3Do49f/400/300"
-    ],
+    "images": ["https://picsum.photos/seed/3Do49f/400/300"],
     "createdAt": "2025-04-25T21:41:48.898Z",
     "updatedAt": "2025-05-15T16:17:10.883Z"
   },
@@ -1135,11 +968,7 @@
     "compatibleModels": [
       {
         "modelId": "model-016",
-        "years": [
-          2015,
-          2024,
-          2022
-        ]
+        "years": [2015, 2024, 2022]
       }
     ],
     "pricing": {
@@ -1177,19 +1006,11 @@
     "compatibleModels": [
       {
         "modelId": "model-025",
-        "years": [
-          2017,
-          2021,
-          2019
-        ]
+        "years": [2017, 2021, 2019]
       },
       {
         "modelId": "model-026",
-        "years": [
-          2017,
-          2021,
-          2024
-        ]
+        "years": [2017, 2021, 2024]
       }
     ],
     "pricing": {
@@ -1215,9 +1036,7 @@
       "oemNumber": "KMZRUQU9XM",
       "material": "Steel"
     },
-    "images": [
-      "https://picsum.photos/seed/VGy1KktBqP/400/300"
-    ],
+    "images": ["https://picsum.photos/seed/VGy1KktBqP/400/300"],
     "createdAt": "2025-12-08T18:04:36.087Z",
     "updatedAt": "2025-12-08T20:25:12.072Z"
   },
@@ -1231,12 +1050,7 @@
     "compatibleModels": [
       {
         "modelId": "model-010",
-        "years": [
-          2014,
-          2022,
-          2015,
-          2016
-        ]
+        "years": [2014, 2022, 2015, 2016]
       }
     ],
     "pricing": {
@@ -1262,9 +1076,7 @@
       "oemNumber": "FZJ2TWJF4Z",
       "material": "Aluminum"
     },
-    "images": [
-      "https://picsum.photos/seed/39C7o5tvm/400/300"
-    ],
+    "images": ["https://picsum.photos/seed/39C7o5tvm/400/300"],
     "createdAt": "2025-05-15T06:05:03.628Z",
     "updatedAt": "2025-11-17T09:31:55.463Z"
   },
@@ -1278,9 +1090,7 @@
     "compatibleModels": [
       {
         "modelId": "model-008",
-        "years": [
-          2024
-        ]
+        "years": [2024]
       }
     ],
     "pricing": {
@@ -1318,26 +1128,15 @@
     "compatibleModels": [
       {
         "modelId": "model-004",
-        "years": [
-          2021
-        ]
+        "years": [2021]
       },
       {
         "modelId": "model-012",
-        "years": [
-          2018,
-          2017,
-          2023,
-          2020
-        ]
+        "years": [2018, 2017, 2023, 2020]
       },
       {
         "modelId": "model-017",
-        "years": [
-          2018,
-          2023,
-          2021
-        ]
+        "years": [2018, 2023, 2021]
       }
     ],
     "pricing": {

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { partCategories } from "@/fixtures";
+import Link from 'next/link';
+import { partCategories } from '@/fixtures';
 
 export const CategoryPreview = () => {
   // Get main categories (no parent)

@@ -1,11 +1,11 @@
-import { faker } from "@faker-js/faker";
-import type { CarPart } from "@/types/car-parts";
+import { faker } from '@faker-js/faker';
+import type { CarPart } from '@/types/car-parts';
 import {
   warehouses,
   manufacturers,
   carModels,
   partCategories,
-} from "@/fixtures/base-data";
+} from '@/fixtures/base-data';
 
 /**
  * Generates a random car part with realistic data
@@ -17,13 +17,12 @@ export function generateCarPart(): CarPart {
   );
 
   // If no compatible models, pick any model
-  const selectedModels = compatibleModels.length > 0
-    ? compatibleModels
-    : carModels;
+  const selectedModels =
+    compatibleModels.length > 0 ? compatibleModels : carModels;
 
   const model = faker.helpers.arrayElement(selectedModels);
   const category = faker.helpers.arrayElement(partCategories);
-  
+
   // Generate compatible models (1-3 models)
   const numCompatibleModels = faker.number.int({ min: 1, max: 3 });
   const compatibleModelsList = faker.helpers
@@ -38,22 +37,26 @@ export function generateCarPart(): CarPart {
 
   const warehouse = faker.helpers.arrayElement(warehouses);
   const inStock = faker.datatype.boolean({ probability: 0.85 });
-  const quantity = inStock
-    ? faker.number.int({ min: 1, max: 500 })
-    : 0;
+  const quantity = inStock ? faker.number.int({ min: 1, max: 500 }) : 0;
   const estimatedDeliveryDays = inStock
     ? faker.number.int({ min: 1, max: 7 })
     : faker.number.int({ min: 7, max: 30 });
 
   // Generate realistic pricing
-  const basePrice = faker.number.float({ min: 10, max: 1000, fractionDigits: 2 });
+  const basePrice = faker.number.float({
+    min: 10,
+    max: 1000,
+    fractionDigits: 2,
+  });
   const manufacturerPrice = basePrice;
-  const dealerPrice = basePrice * faker.number.float({ min: 1.3, max: 1.8, fractionDigits: 2 });
-  const transportationFee = basePrice < 50
-    ? faker.number.float({ min: 4, max: 10, fractionDigits: 2 })
-    : basePrice < 200
-    ? faker.number.float({ min: 10, max: 25, fractionDigits: 2 })
-    : faker.number.float({ min: 25, max: 60, fractionDigits: 2 });
+  const dealerPrice =
+    basePrice * faker.number.float({ min: 1.3, max: 1.8, fractionDigits: 2 });
+  const transportationFee =
+    basePrice < 50
+      ? faker.number.float({ min: 4, max: 10, fractionDigits: 2 })
+      : basePrice < 200
+        ? faker.number.float({ min: 10, max: 25, fractionDigits: 2 })
+        : faker.number.float({ min: 25, max: 60, fractionDigits: 2 });
 
   // Generate part name based on category and manufacturer
   const categoryName = category.name.toLowerCase();
@@ -61,7 +64,7 @@ export function generateCarPart(): CarPart {
 
   // Generate part number
   const manufacturerPrefix = manufacturer.name.substring(0, 3).toUpperCase();
-  const categoryCode = category.id.split("-")[1];
+  const categoryCode = category.id.split('-')[1];
   const partNumber = `${manufacturerPrefix}-${categoryCode}-${faker.string.alphanumeric(3).toUpperCase()}`;
 
   // Generate specifications
@@ -69,10 +72,14 @@ export function generateCarPart(): CarPart {
   const hasWeight = faker.datatype.boolean({ probability: 0.8 });
   const hasOEM = faker.datatype.boolean({ probability: 0.6 });
 
-  const specifications: CarPart["specifications"] = {};
-  
+  const specifications: CarPart['specifications'] = {};
+
   if (hasWeight) {
-    specifications.weight = faker.number.float({ min: 0.1, max: 50, fractionDigits: 2 });
+    specifications.weight = faker.number.float({
+      min: 0.1,
+      max: 50,
+      fractionDigits: 2,
+    });
   }
 
   if (hasDimensions) {
@@ -80,7 +87,7 @@ export function generateCarPart(): CarPart {
       length: faker.number.float({ min: 2, max: 80, fractionDigits: 1 }),
       width: faker.number.float({ min: 1, max: 20, fractionDigits: 1 }),
       height: faker.number.float({ min: 0.5, max: 15, fractionDigits: 1 }),
-      unit: "inches",
+      unit: 'inches',
     };
   }
 
@@ -90,31 +97,33 @@ export function generateCarPart(): CarPart {
 
   // Material based on category
   const materials: Record<string, string[]> = {
-    "cat-102": ["Synthetic Media", "Cellulose", "Microglass"],
-    "cat-103": ["Synthetic Fiber", "Cotton", "Paper"],
-    "cat-104": ["Iridium", "Platinum", "Copper"],
-    "cat-201": ["Ceramic Composite", "Semi-Metallic", "Organic"],
-    "cat-202": ["Cast Iron", "Carbon Composite", "Drilled & Slotted"],
-    "cat-203": ["Steel & Oil", "Gas Charged", "Hydraulic"],
-    "cat-204": ["Steel & Aluminum", "Monotube", "Twin-Tube"],
-    "cat-301": ["Polycarbonate & LED", "HID", "Halogen"],
-    "cat-303": ["AGM", "Lead-Acid", "Lithium"],
-    "cat-304": ["Copper & Steel", "Aluminum"],
-    "cat-601": ["Aluminum", "Copper & Brass"],
-    "cat-701": ["Steel & Plastic", "Aluminum"],
-    "cat-801": ["Stainless Steel", "Aluminized Steel"],
-    "cat-802": ["Stainless Steel & Ceramic", "Metal Substrate"],
+    'cat-102': ['Synthetic Media', 'Cellulose', 'Microglass'],
+    'cat-103': ['Synthetic Fiber', 'Cotton', 'Paper'],
+    'cat-104': ['Iridium', 'Platinum', 'Copper'],
+    'cat-201': ['Ceramic Composite', 'Semi-Metallic', 'Organic'],
+    'cat-202': ['Cast Iron', 'Carbon Composite', 'Drilled & Slotted'],
+    'cat-203': ['Steel & Oil', 'Gas Charged', 'Hydraulic'],
+    'cat-204': ['Steel & Aluminum', 'Monotube', 'Twin-Tube'],
+    'cat-301': ['Polycarbonate & LED', 'HID', 'Halogen'],
+    'cat-303': ['AGM', 'Lead-Acid', 'Lithium'],
+    'cat-304': ['Copper & Steel', 'Aluminum'],
+    'cat-601': ['Aluminum', 'Copper & Brass'],
+    'cat-701': ['Steel & Plastic', 'Aluminum'],
+    'cat-801': ['Stainless Steel', 'Aluminized Steel'],
+    'cat-802': ['Stainless Steel & Ceramic', 'Metal Substrate'],
   };
 
   if (materials[category.id]) {
-    specifications.material = faker.helpers.arrayElement(materials[category.id]);
+    specifications.material = faker.helpers.arrayElement(
+      materials[category.id],
+    );
   } else {
     specifications.material = faker.helpers.arrayElement([
-      "Steel",
-      "Aluminum",
-      "Plastic",
-      "Rubber",
-      "Composite",
+      'Steel',
+      'Aluminum',
+      'Plastic',
+      'Rubber',
+      'Composite',
     ]);
   }
 
@@ -136,7 +145,7 @@ export function generateCarPart(): CarPart {
       manufacturerPrice: Number(manufacturerPrice.toFixed(2)),
       dealerPrice: Number(dealerPrice.toFixed(2)),
       transportationFee: Number(transportationFee.toFixed(2)),
-      currency: "USD",
+      currency: 'USD',
     },
     availability: {
       inStock,
@@ -144,7 +153,8 @@ export function generateCarPart(): CarPart {
       warehouseId: warehouse.id,
       estimatedDeliveryDays,
     },
-    specifications: Object.keys(specifications).length > 0 ? specifications : undefined,
+    specifications:
+      Object.keys(specifications).length > 0 ? specifications : undefined,
     images: faker.datatype.boolean({ probability: 0.3 })
       ? [faker.image.url({ width: 400, height: 300 })]
       : undefined,
@@ -177,4 +187,3 @@ export function generateUniqueCarParts(count: number): CarPart[] {
 
   return parts;
 }
-

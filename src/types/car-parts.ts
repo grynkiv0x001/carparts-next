@@ -71,4 +71,3 @@ export interface CarPart {
   createdAt: Date;
   updatedAt: Date;
 }
-

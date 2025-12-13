@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react';
+import Link from 'next/link';
 
 export const Header = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Implement search functionality
-    console.log("Searching for:", searchQuery);
+    console.log('Searching for:', searchQuery);
   };
 
   return (
@@ -71,4 +71,4 @@ export const Header = () => {
       </div>
     </header>
   );
-}
+};
