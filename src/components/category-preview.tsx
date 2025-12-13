@@ -1,13 +1,22 @@
 import Link from 'next/link';
-import { partCategories } from '@/fixtures';
+import { getAllCategories } from '@/lib/db-queries';
 
-export const CategoryPreview = () => {
-  // Get main categories (no parent)
-  const mainCategories = partCategories.filter((cat) => !cat.parentId);
-  // Get some popular subcategories
-  const popularSubcategories = partCategories
-    .filter((cat) => cat.parentId)
-    .slice(0, 8);
+export const CategoryPreview = async () => {
+  let mainCategories: Array<{ id: string; name: string; parentId: string | null }> = [];
+  let popularSubcategories: Array<{ id: string; name: string; parentId: string | null }> = [];
+
+  try {
+    const categories = await getAllCategories();
+    
+    // Get main categories (no parent)
+    mainCategories = categories.filter((cat) => !cat.parentId);
+    // Get some popular subcategories
+    popularSubcategories = categories
+      .filter((cat) => cat.parentId)
+      .slice(0, 8);
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+  }
 
   return (
     <section className="py-8 border-b bg-gray-50 dark:bg-gray-900">
