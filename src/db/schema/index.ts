@@ -1,5 +1,3 @@
-// Export all schema tables
-
 export * from './car-models';
 export * from './car-parts';
 export * from './categories';

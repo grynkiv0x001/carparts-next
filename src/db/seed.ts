@@ -27,7 +27,6 @@ async function seed() {
   console.log('🌱 Starting database seed...\n');
 
   try {
-    // Clear existing data (in reverse order of dependencies)
     console.log('Clearing existing data...');
     await db.delete(carPartsTable);
     await db.delete(carModelsTable);
@@ -36,7 +35,6 @@ async function seed() {
     await db.delete(warehousesTable);
     console.log('✅ Cleared existing data\n');
 
-    // Insert warehouses
     console.log(`Inserting ${warehouses.length} warehouses...`);
     await db.insert(warehousesTable).values(
       warehouses.map((w) => ({
@@ -48,7 +46,6 @@ async function seed() {
     );
     console.log('✅ Warehouses inserted\n');
 
-    // Insert manufacturers
     console.log(`Inserting ${manufacturers.length} manufacturers...`);
     await db.insert(manufacturersTable).values(
       manufacturers.map((m) => ({
@@ -59,7 +56,6 @@ async function seed() {
     );
     console.log('✅ Manufacturers inserted\n');
 
-    // Insert car models
     console.log(`Inserting ${carModels.length} car models...`);
     await db.insert(carModelsTable).values(
       carModels.map((m) => ({
@@ -71,7 +67,6 @@ async function seed() {
     );
     console.log('✅ Car models inserted\n');
 
-    // Insert part categories
     console.log(`Inserting ${partCategories.length} part categories...`);
     await db.insert(partCategoriesTable).values(
       partCategories.map((c) => ({
@@ -82,7 +77,6 @@ async function seed() {
     );
     console.log('✅ Part categories inserted\n');
 
-    // Insert sample products
     console.log(`Inserting ${sampleProducts.length} sample products...`);
     await db.insert(carPartsTable).values(
       sampleProducts.map((p) => ({
@@ -103,7 +97,6 @@ async function seed() {
     );
     console.log('✅ Sample products inserted\n');
 
-    // Optionally generate and insert additional parts
     const generateCount = process.env.SEED_COUNT
       ? parseInt(process.env.SEED_COUNT, 10)
       : 0;
@@ -140,7 +133,6 @@ async function seed() {
   }
 }
 
-// Run the seed function
 seed()
   .then(() => {
     console.log('\n✅ Seed script finished');

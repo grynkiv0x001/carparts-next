@@ -11,7 +11,6 @@ if (!databaseUrl) {
   );
 }
 
-// Disable prefetch as it is not supported for "Transaction" pool mode
 const client = postgres(databaseUrl, { max: 1 });
 
 export const db = drizzle(client, { schema });

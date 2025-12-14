@@ -36,7 +36,6 @@ async function checkConnection() {
     console.log(`  Database: ${dbInfo?.current_database || 'Unknown'}`);
     console.log(`  User: ${dbInfo?.current_user || 'Unknown'}\n`);
 
-    // Check if tables exist
     const tablesResult = await db.execute(
       sql`SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name`,
     );

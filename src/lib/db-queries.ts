@@ -16,11 +16,9 @@ export async function getProductsWithRelations(limit = 12) {
     .limit(limit)
     .orderBy(desc(carParts.createdAt));
 
-  // Get all unique IDs
   const manufacturerIds = [...new Set(products.map((p) => p.manufacturerId))];
   const categoryIds = [...new Set(products.map((p) => p.categoryId))];
 
-  // Fetch all manufacturers and categories
   const [allManufacturers, allCategories] = await Promise.all([
     manufacturerIds.length > 0
       ? db
@@ -36,11 +34,9 @@ export async function getProductsWithRelations(limit = 12) {
       : Promise.resolve([]),
   ]);
 
-  // Create lookup maps
   const manufacturerMap = new Map(allManufacturers.map((m) => [m.id, m.name]));
   const categoryMap = new Map(allCategories.map((c) => [c.id, c.name]));
 
-  // Enhance products with related data
   return products.map((product) => ({
     ...product,
     manufacturerName: manufacturerMap.get(product.manufacturerId),
@@ -87,10 +83,8 @@ export async function getProductsByCategory(categoryId: string, limit = 20) {
     .limit(limit)
     .orderBy(desc(carParts.createdAt));
 
-  // Get all unique IDs
   const manufacturerIds = [...new Set(products.map((p) => p.manufacturerId))];
 
-  // Fetch all manufacturers
   const allManufacturers =
     manufacturerIds.length > 0
       ? await db
@@ -99,17 +93,14 @@ export async function getProductsByCategory(categoryId: string, limit = 20) {
           .where(inArray(manufacturers.id, manufacturerIds))
       : [];
 
-  // Create lookup map
   const manufacturerMap = new Map(allManufacturers.map((m) => [m.id, m.name]));
 
-  // Get category name
   const category = await db
     .select()
     .from(partCategories)
     .where(eq(partCategories.id, categoryId))
     .limit(1);
 
-  // Enhance products with related data
   return {
     products: products.map((product) => ({
       ...product,

@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# CarParts Next is a place with a lot of car parts
+# CarParts Next has a lot of car parts
 
 ## Getting Started
 

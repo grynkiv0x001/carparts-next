@@ -2,6 +2,8 @@
 
 This document describes the API structure and how data flows through the application.
 
+### WIP; Will be updated, now it's nothing more then the notes
+
 ## Architecture Overview
 
 The application follows Next.js best practices:

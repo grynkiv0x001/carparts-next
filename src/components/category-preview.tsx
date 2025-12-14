@@ -1,25 +1,53 @@
 import Link from 'next/link';
 import { getAllCategories } from '@/lib/db-queries';
 
+// TODO: Update category icons/emojis handling
+const categoryEmojiById = (id: string) => {
+  switch (id) {
+    case 'cat-001':
+      return '⚙️';
+    case 'cat-002':
+      return '🛞';
+    case 'cat-003':
+      return '💡';
+    case 'cat-004':
+      return '🚗';
+    case 'cat-005':
+      return '💺';
+    case 'cat-006':
+      return '❄️';
+    case 'cat-007':
+      return '⛽️';
+    case 'cat-008':
+      return '💨';
+    default:
+      return '⚙️';
+  }
+};
+
 export const CategoryPreview = async () => {
-  let mainCategories: Array<{ id: string; name: string; parentId: string | null }> = [];
-  let popularSubcategories: Array<{ id: string; name: string; parentId: string | null }> = [];
+  let mainCategories: Array<{
+    id: string;
+    name: string;
+    parentId: string | null;
+  }> = [];
+  let popularSubcategories: Array<{
+    id: string;
+    name: string;
+    parentId: string | null;
+  }> = [];
 
   try {
     const categories = await getAllCategories();
-    
-    // Get main categories (no parent)
+
     mainCategories = categories.filter((cat) => !cat.parentId);
-    // Get some popular subcategories
-    popularSubcategories = categories
-      .filter((cat) => cat.parentId)
-      .slice(0, 8);
+    popularSubcategories = categories.filter((cat) => cat.parentId).slice(0, 8);
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
 
   return (
-    <section className="py-8 border-b bg-gray-50 dark:bg-gray-900">
+    <section className="py-8 bg-blue-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
@@ -30,11 +58,11 @@ export const CategoryPreview = async () => {
           </p>
         </div>
 
-        {/* Main Categories */}
         <div className="mb-6">
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-700 dark:text-gray-300">
             Main Categories
           </h3>
+
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {mainCategories.slice(0, 12).map((category) => (
               <Link
@@ -42,7 +70,9 @@ export const CategoryPreview = async () => {
                 href={`/categories/${category.id}`}
                 className="group rounded-lg border border-gray-200 bg-white p-4 text-center transition-all hover:border-blue-500 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-400"
               >
-                <div className="mb-2 text-2xl">🔧</div>
+                <div className="mb-2 text-2xl">
+                  {categoryEmojiById(category.id)}
+                </div>
                 <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400">
                   {category.name}
                 </div>
@@ -51,11 +81,11 @@ export const CategoryPreview = async () => {
           </div>
         </div>
 
-        {/* Popular Subcategories */}
         <div>
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-700 dark:text-gray-300">
             Popular Parts
           </h3>
+
           <div className="flex flex-wrap gap-2">
             {popularSubcategories.map((category) => (
               <Link
